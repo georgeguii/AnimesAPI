@@ -17,5 +17,7 @@ namespace AnimesAPI.DAL.Entities
         public GenresEnum Genres { get; set; }
 
         public string Director { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }
