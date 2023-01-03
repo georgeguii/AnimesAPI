@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnimesAPI.Repository
 {
-    public class AnimeRepository : IAnimeRepository
-    {
-    }
+    //public class AnimeRepository : IAnimeRepository
+    //{
+    //}
 }

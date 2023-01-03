@@ -8,7 +8,7 @@ namespace AnimesAPI.DAL.Entities
 
         public string Name { get; set; }
 
-        //AdcResumo
+        public string Resume { get; set; }
 
         public StatusEnum Status { get; set; }
 
@@ -16,8 +16,9 @@ namespace AnimesAPI.DAL.Entities
 
         public SourceEnum Source { get; set; }
 
-        //Dps transformar em uma tabela separada N ... N; fix nos DTO's
-        public GenresEnum Genres { get; set; }
+        //Foi transformada em uma tabela separada devido ao relacionamento N pra N ser necessário
+        //public GenresEnum Genres { get; set; }
+        public ICollection<Genre> Genres { get; set; }
 
         public string Director { get; set; }
 

@@ -3,6 +3,7 @@ using AnimesAPI.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimesAPI.DAL.Migrations
 {
     [DbContext(typeof(AnimesDbContext))]
-    partial class AnimesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230103202134_TransformGenreInTable")]
+    partial class TransformGenreInTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +74,7 @@ namespace AnimesAPI.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Animes");
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("AnimesAPI.DAL.Entities.Genre", b =>
@@ -88,7 +91,7 @@ namespace AnimesAPI.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genre");
                 });
 
             modelBuilder.Entity("AnimeGenre", b =>
