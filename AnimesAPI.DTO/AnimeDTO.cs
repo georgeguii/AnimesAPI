@@ -17,7 +17,7 @@ namespace AnimesAPI.DTO
         public int Source { get; set; }
 
         [Required]
-        public int Genres { get; set; }
+        public List<int> Genres { get; set; }
 
         [Required]
         public string Director { get; set; }
