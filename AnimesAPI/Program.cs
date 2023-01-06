@@ -7,12 +7,16 @@ using AnimesAPI.Utils.Mappers;
 
 using AnimesAPI.Repository;
 using AnimesAPI.Repository.Interfaces;
+using AnimesAPI.Manager.Interfaces;
+using AnimesAPI.Manager;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<AnimesDbContext>();
+
 builder.Services.AddScoped<IDAO<Anime>, AnimeDAO>();
+builder.Services.AddScoped<IAnimeManager, AnimeManager>();
 builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 
 

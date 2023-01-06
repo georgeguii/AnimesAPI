@@ -1189,6 +1189,20 @@
           "bin/placeholder/AnimesAPI.DTO.dll": {}
         }
       },
+      "AnimesAPI.Manager/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AnimesAPI.DTO": "1.0.0",
+          "AnimesAPI.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AnimesAPI.Manager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AnimesAPI.Manager.dll": {}
+        }
+      },
       "AnimesAPI.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3758,6 +3772,11 @@
       "path": "../AnimesAPI.DTO/AnimesAPI.DTO.csproj",
       "msbuildProject": "../AnimesAPI.DTO/AnimesAPI.DTO.csproj"
     },
+    "AnimesAPI.Manager/1.0.0": {
+      "type": "project",
+      "path": "../AnimesAPI.Manager/AnimesAPI.Manager.csproj",
+      "msbuildProject": "../AnimesAPI.Manager/AnimesAPI.Manager.csproj"
+    },
     "AnimesAPI.Repository/1.0.0": {
       "type": "project",
       "path": "../AnimesAPI.Repository/AnimesAPI.Repository.csproj",
@@ -3772,6 +3791,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AnimesAPI.DAL >= 1.0.0",
+      "AnimesAPI.Manager >= 1.0.0",
       "AnimesAPI.Repository >= 1.0.0",
       "AnimesAPI.Utils >= 1.0.0",
       "AutoMapper >= 12.0.0",
@@ -3808,6 +3828,9 @@
           "projectReferences": {
             "C:\\workspace\\aprendendo-c#\\AnimesAPI\\AnimesAPI.DAL\\AnimesAPI.DAL.csproj": {
               "projectPath": "C:\\workspace\\aprendendo-c#\\AnimesAPI\\AnimesAPI.DAL\\AnimesAPI.DAL.csproj"
+            },
+            "C:\\workspace\\aprendendo-c#\\AnimesAPI\\AnimesAPI.Manager\\AnimesAPI.Manager.csproj": {
+              "projectPath": "C:\\workspace\\aprendendo-c#\\AnimesAPI\\AnimesAPI.Manager\\AnimesAPI.Manager.csproj"
             },
             "C:\\workspace\\aprendendo-c#\\AnimesAPI\\AnimesAPI.Repository\\AnimesAPI.Repository.csproj": {
               "projectPath": "C:\\workspace\\aprendendo-c#\\AnimesAPI\\AnimesAPI.Repository\\AnimesAPI.Repository.csproj"

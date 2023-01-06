@@ -32,11 +32,11 @@ namespace AnimesAPI.Manager
 
         public async Task<List<AnimeDTO>> GetAllAsync(int page)
         {
-            List<Anime> teste = await _animeRepository.GetAllAnimes(page);
+            List<Anime> listResponse = await _animeRepository.GetAllAnimes(page);
 
-            List<AnimeDTO> listResponse = _mapper.Map<List<AnimeDTO>>(teste);
+            List<AnimeDTO> listResponseDto = _mapper.Map<List<AnimeDTO>>(listResponse);
 
-            return listResponse;
+            return listResponseDto;
         }
     }
 }
