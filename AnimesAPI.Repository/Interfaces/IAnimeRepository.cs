@@ -5,23 +5,23 @@ namespace AnimesAPI.Repository.Interfaces
 {
     public interface IAnimeRepository
     {
-        AnimeDTO CreateAnime(AnimeDTO createAnimeDto);
+        Anime CreateAnime(Anime createAnime);
 
-        List<AnimeDTO> GetAllAnimes(int page);
+        Task<List<Anime>> GetAllAnimes(int page);
 
-        AnimeDTO GetAnimeById(int animeId);
+        //Anime GetAnimeById(int animeId);
 
-        List<AnimeDTO> GetAnimeBySource(int source, int page);
+        //List<Anime> GetAnimeBySource(int source, int page);
 
-        List<AnimeDTO> GetAnimesByDirector(string director, int page);
+        //List<Anime> GetAnimesByDirector(string director, int page);
 
-        List<AnimeDTO> GetAnimeByStudio(string studio, int page);
+        //List<Anime> GetAnimeByStudio(string studio, int page);
 
-        List<AnimeDTO> GetAnimeByStatus(int statusEnum, int page);
+        //List<Anime> GetAnimeByStatus(int statusEnum, int page);
 
-        AnimeDTO UpdateAnime(AnimeDTO updateAnimeDto);
+        //Anime UpdateAnime(Anime updateAnime);
 
-        AnimeDTO SoftDeleteAnime(int id);
+        //Anime SoftDeleteAnime(int id);
 
     }
 }

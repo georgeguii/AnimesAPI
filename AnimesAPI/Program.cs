@@ -2,10 +2,12 @@ using AnimesAPI.DAL.DAO;
 using AnimesAPI.DAL.Entities;
 using AnimesAPI.Utils.Mappers;
 using AnimesAPI.DAL.DAO.BaseDAO;
+using AnimesAPI.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<AnimesDbContext>();
 builder.Services.AddScoped<IDAO<Anime>, AnimeDAO>();
 
 

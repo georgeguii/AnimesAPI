@@ -17,15 +17,13 @@ namespace AnimesAPI.Repository
             _mapper = mapper;
         }
 
-        public AnimeDTO CreateAnime(AnimeDTO createAnimeDto)
+        public Anime CreateAnime(Anime createAnime)
+            => _animeDAO.Create(createAnime);
+
+        public async Task<List<Anime>> GetAllAnimes(int page)
         {
-            Anime newAnime = _mapper.Map<Anime>(createAnimeDto);
-
-            Anime createdAnime = _animeDAO.Create(newAnime);
-
-            AnimeDTO createdAnimeDtoResponse = _mapper.Map<AnimeDTO>(createdAnime);
-
-            return createdAnimeDtoResponse;
+            List<Anime> animesResponse = new List<Anime>();
+            return (await _animeDAO.Get()).Where(i => i.IsDeleted == false).Skip((page - 1) * 10).Take(10).ToList();
         }
     }
 }
