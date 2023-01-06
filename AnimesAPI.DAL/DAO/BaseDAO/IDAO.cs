@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AnimesAPI.DAL.DAO.BaseDAO
+﻿namespace AnimesAPI.DAL.DAO.BaseDAO
 {
-    public interface IBaseDAO<T> where T : class
+    public interface IDAO<T> where T : class
     {
         T Create(T obj);
         IEnumerable<T> Get();

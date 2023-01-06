@@ -1,14 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimesAPI.DAL.DAO.BaseDAO
 {
-    public class BaseDAO<T> : IBaseDAO<T> where T : class
+    public class BaseDAO<T> : IDAO<T> where T : class
     {
         public AnimesDbContext _context { get; set; }
 
