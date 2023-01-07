@@ -1,6 +1,7 @@
 ﻿using AnimesAPI.DTO;
 using Microsoft.AspNetCore.Mvc;
 using AnimesAPI.Manager.Interfaces;
+using AutoMapper;
 
 namespace AnimesAPI.Controllers
 {
@@ -18,7 +19,7 @@ namespace AnimesAPI.Controllers
 
 
         /// <summary>
-        /// Cadastrar um novo anime
+        /// Register a new anime
         /// </summary>
         /// <param name="createAnime"></param>
         /// <returns></returns>
@@ -31,6 +32,10 @@ namespace AnimesAPI.Controllers
 
                 return Ok(animeResponse);
             }
+            catch (AutoMapperMappingException ex)
+            {
+                return BadRequest("Fudeu");
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, ex);
@@ -39,7 +44,7 @@ namespace AnimesAPI.Controllers
 
 
         /// <summary>
-        /// Busca uma lista de animes cadastrados
+        /// Search a list of registered animes
         /// </summary>
         /// <param name="page"></param>
         /// <returns></returns>

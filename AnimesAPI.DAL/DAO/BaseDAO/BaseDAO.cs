@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Drawing;
 
 namespace AnimesAPI.DAL.DAO.BaseDAO
 {

@@ -6,4 +6,9 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AnimesAPI.DTO\AnimesAPI.DTO.csproj" />
+    <ProjectReference Include="..\AnimesAPI.Repository\AnimesAPI.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

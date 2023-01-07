@@ -19,6 +19,9 @@ builder.Services.AddScoped<IDAO<Anime>, AnimeDAO>();
 builder.Services.AddScoped<IAnimeManager, AnimeManager>();
 builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 
+builder.Services.AddScoped<IDAO<Genre>, GenreDAO>();
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

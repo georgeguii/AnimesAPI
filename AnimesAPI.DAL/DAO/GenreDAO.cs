@@ -1,12 +1,11 @@
 ﻿using AnimesAPI.DAL.Entities;
 using AnimesAPI.DAL.DAO.BaseDAO;
 
-
 namespace AnimesAPI.DAL.DAO
 {
-    public class AnimeDAO : BaseDAO<Anime>
+    public class GenreDAO : BaseDAO<Genre>
     {
-        public AnimeDAO(AnimesDbContext context) : base(context)
+        public GenreDAO(AnimesDbContext context) : base(context)
         {
 
         }

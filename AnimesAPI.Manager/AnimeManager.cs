@@ -8,18 +8,26 @@ namespace AnimesAPI.Manager
 {
     public class AnimeManager : IAnimeManager
     {
-        private readonly IAnimeRepository _animeRepository;
         private readonly IMapper _mapper;
+        private readonly IGenreRepository _genreRepository;
+        private readonly IAnimeRepository _animeRepository;
 
-        public AnimeManager(IAnimeRepository animeRepository, IMapper mapper)
+        public AnimeManager(IMapper mapper, IGenreRepository genreRepository, IAnimeRepository animeRepository)
         {
-            _animeRepository = animeRepository;
             _mapper = mapper;
+            _animeRepository = animeRepository;
+            _genreRepository = genreRepository;
         }
 
         public AnimeDTO Create(AnimeDTO createAnimeDto)
         {
             //Verificar lista de Id dos Genres
+            foreach (var teste in createAnimeDto.Genres)
+            {
+                var aoba = _genreRepository.GetAsyncById(teste);
+                if (aoba == null) throw new NullReferenceException("O gênero informado não existe");
+            }
+            
 
             Anime createAnime = _mapper.Map<Anime>(createAnimeDto);
 

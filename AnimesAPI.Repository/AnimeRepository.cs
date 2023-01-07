@@ -17,9 +17,7 @@ namespace AnimesAPI.Repository
             => _animeDAO.Create(createAnime);
 
         public async Task<List<Anime>> GetAllAnimes(int page)
-        {
-            List<Anime> animesResponse = new List<Anime>();
-            return (await _animeDAO.Get()).Where(i => i.IsDeleted == false).Skip((page - 1) * 10).Take(10).ToList();
-        }
+            =>(await _animeDAO.Get()).Where(i => i.IsDeleted == false).Skip((page - 1) * 10).Take(10).ToList();
+
     }
 }
