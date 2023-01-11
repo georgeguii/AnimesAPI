@@ -8,6 +8,6 @@ namespace AnimesAPI.DAL.Entities
 
         public string Description { get; set; }
 
-        public ICollection<Anime> Animes { get; set; }
+        public ICollection<AnimeGenre> AnimeGenres { get; set; }
     }
 }

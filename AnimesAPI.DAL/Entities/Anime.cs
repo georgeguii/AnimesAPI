@@ -18,7 +18,7 @@ namespace AnimesAPI.DAL.Entities
 
         //Foi transformada em uma tabela separada devido ao relacionamento N pra N ser necessário
         //public GenresEnum Genres { get; set; }
-        public ICollection<Genre> Genres { get; set; }
+        public ICollection<AnimeGenre> AnimeGenres { get; set; }
 
         public string Director { get; set; }
 

@@ -3,6 +3,7 @@ using AnimesAPI.DTO;
 using AnimesAPI.DAL.Entities;
 using AnimesAPI.Manager.Interfaces;
 using AnimesAPI.Repository.Interfaces;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AnimesAPI.Manager
 {
@@ -19,16 +20,15 @@ namespace AnimesAPI.Manager
             _genreRepository = genreRepository;
         }
 
-        public AnimeDTO Create(AnimeDTO createAnimeDto)
+        public async Task<AnimeDTO> Create(AnimeDTO createAnimeDto)
         {
             //Verificar lista de Id dos Genres
-            foreach (var teste in createAnimeDto.Genres)
-            {
-                var aoba = _genreRepository.GetAsyncById(teste);
-                if (aoba == null) throw new NullReferenceException("O gênero informado não existe");
-            }
-            
+            //var aoba = await _genreRepository.GetAllAsync(1);
+            //for (var i = 0; i <= createAnimeDto.Genres.Count; i++)
+            //{
+            //    if (aoba.Contains()) ;
 
+            //}
             Anime createAnime = _mapper.Map<Anime>(createAnimeDto);
 
             Anime createdAnime = _animeRepository.CreateAnime(createAnime);

@@ -43,10 +43,19 @@ namespace AnimesAPI.DAL
                 p.Property(p => p.Description).HasMaxLength(100);
             });
 
-            modelBuilder.Entity<Anime>()
-                .HasMany(p => p.Genres)
-                .WithMany(p => p.Animes)
-                .UsingEntity(j => j.ToTable("AnimeGenres"));
-            }
+            modelBuilder.Entity<AnimeGenre>()
+                .HasKey(ag => new { ag.AnimeId, ag.GenreId });
+
+            //aparentemente isso não é mais necessario
+            modelBuilder.Entity<AnimeGenre>()
+                .HasOne(ag => ag.Anime)
+                .WithMany(a => a.AnimeGenres)
+                .HasForeignKey(ag => ag.AnimeId);
+
+            modelBuilder.Entity<AnimeGenre>()
+                .HasOne(ag => ag.Genre)
+                .WithMany(g => g.AnimeGenres)
+                .HasForeignKey(ag => ag.GenreId);
+        }
     }
 }

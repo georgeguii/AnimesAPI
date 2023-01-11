@@ -24,17 +24,17 @@ namespace AnimesAPI.Controllers
         /// <param name="createAnime"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Create(AnimeDTO createAnime)
+        public async Task<IActionResult> Create(AnimeDTO createAnime)
         {
             try
             {
-                AnimeDTO animeResponse = _animeManager.Create(createAnime);
+                AnimeDTO animeResponse = await _animeManager.Create(createAnime);
 
                 return Ok(animeResponse);
             }
-            catch (AutoMapperMappingException ex)
+            catch (AutoMapperMappingException)
             {
-                return BadRequest("Fudeu");
+                return BadRequest("Não foi possível converter os dados");
             }
             catch (Exception ex)
             {
