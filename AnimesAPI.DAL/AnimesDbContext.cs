@@ -7,6 +7,7 @@ namespace AnimesAPI.DAL
     {
         public DbSet<Anime> Animes { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<AnimeGenre> AnimeGenres { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -11,7 +11,7 @@ namespace AnimesAPI.DAL.DAO.BaseDAO
             _context = context;
         }
 
-        public virtual T Create(T obj)
+        public virtual T Create(T obj) 
         {
             _context.Add(obj);
             _context.SaveChanges();

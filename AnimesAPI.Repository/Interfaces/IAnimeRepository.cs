@@ -5,7 +5,7 @@ namespace AnimesAPI.Repository.Interfaces
 {
     public interface IAnimeRepository
     {
-        Anime CreateAnime(Anime createAnime);
+        Task<Anime> CreateAnime(Anime createAnime);
 
         Task<List<Anime>> GetAllAnimes(int page);
 

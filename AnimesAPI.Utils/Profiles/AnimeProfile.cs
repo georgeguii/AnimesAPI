@@ -10,7 +10,7 @@ namespace AnimesAPI.Utils.Mappers
         public AnimeProfile()
         {
             CreateMap<AnimeDTO, Anime>().ReverseMap();
-            CreateMap<ReferenceGenre, Genre>().ReverseMap();
+            CreateMap<ReferenceGenre, AnimeGenre>().ReverseMap();
 
             //CreateMap<AnimeDTO, Anime>()
             //    .ForMember(a => a.Status, options => options.MapFrom(p => (StatusEnum)p.Status))

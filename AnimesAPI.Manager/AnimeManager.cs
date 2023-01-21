@@ -10,28 +10,30 @@ namespace AnimesAPI.Manager
     public class AnimeManager : IAnimeManager
     {
         private readonly IMapper _mapper;
-        private readonly IGenreRepository _genreRepository;
         private readonly IAnimeRepository _animeRepository;
 
-        public AnimeManager(IMapper mapper, IGenreRepository genreRepository, IAnimeRepository animeRepository)
+        public AnimeManager(IMapper mapper, IAnimeRepository animeRepository)
         {
             _mapper = mapper;
             _animeRepository = animeRepository;
-            _genreRepository = genreRepository;
         }
 
         public async Task<AnimeDTO> Create(AnimeDTO createAnimeDto)
         {
-            //Verificar lista de Id dos Genres
-            //var aoba = await _genreRepository.GetAllAsync(1);
-            //for (var i = 0; i <= createAnimeDto.Genres.Count; i++)
+            //Anime toCreateAnime = new Anime()
             //{
-            //    if (aoba.Contains()) ;
+            //    Name = createAnimeDto.Name,
+            //    Resume = createAnimeDto.Resume,
+            //    Status = createAnimeDto.Status,
+            //    Studio = createAnimeDto.Studio,
+            //    Source = createAnimeDto.Source,
+            //    AnimeGenres = createAnimeDto.Genres,
+            //    Director = createAnimeDto.Director
+            //};
 
-            //}
             Anime createAnime = _mapper.Map<Anime>(createAnimeDto);
 
-            Anime createdAnime = _animeRepository.CreateAnime(createAnime);
+            Anime createdAnime = await _animeRepository.CreateAnime(createAnime);
 
             AnimeDTO createdAnimeDto = _mapper.Map<AnimeDTO>(createdAnime);
 

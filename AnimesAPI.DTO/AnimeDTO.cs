@@ -24,7 +24,7 @@ namespace AnimesAPI.DTO
         public int Source { get; set; }
 
         [Required]
-        public ICollection<ReferenceGenre> Genres { get; set; }
+        public ICollection<ReferenceGenre> AnimeGenres { get; set; }
 
         [Required]
         [MaxLength(40)]
